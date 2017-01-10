@@ -8,11 +8,10 @@ import java.awt.event.ActionEvent;
 public class IndexWindow {
 
 	private JFrame frame;
-    private JButton useTranslatorButton = new JButton ("Use Translator");
-	
-    
-    
-    public static void main(String[] args) {
+	private JButton useTranslatorButton = new JButton("Use Translator");
+	private JButton btnMyTranslator = new JButton ("My Translator");
+
+	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -24,22 +23,25 @@ public class IndexWindow {
 			}
 		});
 	}
-
-	/**
-	 * Create the application.
-	 */
 	public IndexWindow() {
 		initialize();
 		buttonActions();
 	}
 
 	private void buttonActions() {
-		
+
 		this.useTranslatorButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
 		
+		
+		this.btnMyTranslator.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		
+
 	}
 
 	private void initialize() {
@@ -47,8 +49,11 @@ public class IndexWindow {
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-	
-		useTranslatorButton.setBounds(89, 64, 232, 65);
+
+		useTranslatorButton.setBounds(89, 64, 232, 65); //First Button "Use translator"
 		frame.getContentPane().add(useTranslatorButton);
+		
+		btnMyTranslator.setBounds(89, 142, 232, 65);   //Second button "My translator"
+		frame.getContentPane().add(btnMyTranslator);
 	}
 }
