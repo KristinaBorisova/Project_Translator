@@ -30,22 +30,24 @@ public class IndexWindow {
 	 */
 	public IndexWindow() {
 		initialize();
+		buttonActions();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
+	private void buttonActions() {
+		
+		this.useTranslatorButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		
+	}
+
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
-		//JButton useTranslatorButton = new JButton("Use Translator");
-		this.useTranslatorButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
+	
 		useTranslatorButton.setBounds(89, 64, 232, 65);
 		frame.getContentPane().add(useTranslatorButton);
 	}
