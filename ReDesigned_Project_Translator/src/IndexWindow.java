@@ -5,7 +5,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class IndexWindow {
+public class IndexWindow  extends PanelLayout{
 
 	private JFrame frame;
 	private JButton useTranslatorButton = new JButton("Use Translator");
@@ -30,13 +30,14 @@ public class IndexWindow {
 
 	private void buttonActions() {
 
-		this.useTranslatorButton.addActionListener(new ActionListener() {
+		useTranslatorButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
 			}
 		});
 		
 		
-		this.btnMyTranslator.addActionListener(new ActionListener() {
+		btnMyTranslator.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});

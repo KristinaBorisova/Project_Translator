@@ -10,12 +10,21 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JPanel;
 import java.awt.Color;
+import javax.swing.JPopupMenu;
+import java.awt.Component;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.Scrollbar;
+import java.awt.TextArea;
+import java.awt.TextField;
 
 public class PanelLayout {
 
 	private JFrame frame;
-	private JButton translateButton = new JButton("Translate");
-	private JButton clearAllButton = new JButton("Clear All");
+	private JButton btnSwap = new JButton("Swap");
+	private JButton  btnSave = new JButton("Save");
+	private JButton btnClearAll = new JButton("Clear All");
+	private JButton btnTranslate = new JButton("Translate");
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -32,7 +41,30 @@ public class PanelLayout {
 
 	public PanelLayout() {
 		initialize();
+		buttonsAction();
 
+	}
+
+	private void buttonsAction() {
+
+		btnSwap.addActionListener(new ActionListener() { // "Swap" Button Action
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+
+		btnSave.addActionListener(new ActionListener() { //"Save" Button Action
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		
+		btnClearAll.addActionListener(new ActionListener() { // "Clear All"
+																// Button Action
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+       
+		
+	
 	}
 
 	private void initialize() {
@@ -40,33 +72,31 @@ public class PanelLayout {
 		this.frame.setBounds(100, 100, 576, 383);
 		this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setBounds(12, 282, 183, 47);
+		
+		
+		btnSave.setBounds(27, 282, 156, 47);
 
-		this.translateButton.setBounds(234, 126, 87, 25);
-		this.translateButton.setForeground(Color.BLUE);
+		btnSwap.setBounds(225, 127, 87, 25);
+		btnSwap.setForeground(Color.BLUE);
 
-		this.clearAllButton.setForeground(Color.RED);
-		this.clearAllButton.setBounds(225, 287, 118, 36);
+		btnTranslate.setForeground(Color.RED);
+		btnTranslate.setBounds(207, 287, 144, 36);
 
-		JButton btnNewButton_1 = new JButton("New button2");
-		btnNewButton_1.setBounds(361, 282, 175, 47);
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
+		btnClearAll.setBounds(372, 282, 156, 47);
 
-		JPanel panel = new JPanel();
-		panel.setBounds(12, 13, 524, 106);
-
-		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(12, 158, 524, 106);
 		frame.getContentPane().setLayout(null);
-		frame.getContentPane().add(btnNewButton);
-		frame.getContentPane().add(clearAllButton);
-		frame.getContentPane().add(btnNewButton_1);
-		frame.getContentPane().add(panel_1);
-		frame.getContentPane().add(panel);
-		frame.getContentPane().add(translateButton);
+		frame.getContentPane().add(btnSave);
+		frame.getContentPane().add(btnTranslate);
+		frame.getContentPane().add(btnClearAll);
+		frame.getContentPane().add(btnSwap);
+
+		TextField userInputTextField = new TextField();
+		userInputTextField.setBounds(27, 10, 501, 111);
+		frame.getContentPane().add(userInputTextField);
+
+		TextField outputTextField = new TextField();
+		outputTextField.setBounds(27, 158, 501, 111);
+		frame.getContentPane().add(outputTextField);
 	}
+
 }
