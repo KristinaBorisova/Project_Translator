@@ -102,8 +102,8 @@ public class PanelLayout {
 		frame.getContentPane().add(btnTranslate);
 		frame.getContentPane().add(btnClearAll);
 		frame.getContentPane().add(btnSwap);
+		
 		userInputTextArea.setBounds(41, 41, 493, 114);
-
 		frame.getContentPane().add(userInputTextArea);
 
 		outputTextArea.setBounds(41, 189, 493, 114);
