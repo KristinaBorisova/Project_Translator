@@ -54,7 +54,6 @@ public class PanelLayout {
 
 	public void clearAll() { // Clear All Function for button "Clear All"
 		userInputTextArea.setText("");
-		;
 		outputTextArea.setText("");
 	}
 
@@ -81,29 +80,33 @@ public class PanelLayout {
 
 	private void initialize() {
 		frame = new JFrame();
-		this.frame.setBounds(100, 100, 576, 383);
+		this.frame.setBounds(100, 100, 602, 412);
 		this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		btnSave.setBounds(27, 282, 156, 47);
+		btnSave.setBounds(406, 316, 128, 36);
 
-		btnSwap.setBounds(225, 127, 87, 25);
+		btnSwap.setBounds(229, 159, 87, 25);
 		btnSwap.setForeground(Color.BLUE);
+		btnTranslate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 
 		btnTranslate.setForeground(Color.RED);
-		btnTranslate.setBounds(207, 287, 144, 36);
+		btnTranslate.setBounds(200, 316, 172, 36);
 
-		btnClearAll.setBounds(372, 282, 156, 47);
+		btnClearAll.setBounds(41, 316, 128, 36);
 
 		frame.getContentPane().setLayout(null);
 		frame.getContentPane().add(btnSave);
 		frame.getContentPane().add(btnTranslate);
 		frame.getContentPane().add(btnClearAll);
 		frame.getContentPane().add(btnSwap);
-		userInputTextArea.setBounds(41, 10, 448, 104);
+		userInputTextArea.setBounds(41, 41, 493, 114);
 
 		frame.getContentPane().add(userInputTextArea);
 
-		outputTextArea.setBounds(41, 165, 448, 104);
+		outputTextArea.setBounds(41, 189, 493, 114);
 		frame.getContentPane().add(outputTextArea);
 	}
 }
