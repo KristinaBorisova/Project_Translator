@@ -25,26 +25,13 @@ import java.awt.TextField;
 
 public class PanelLayout {
 
-	private JFrame frame; //JFrame
+	JFrame frame; // JFrame
 	private JButton btnSwap = new JButton("Swap");
 	private JButton btnSave = new JButton("Save");
 	private JButton btnClearAll = new JButton("Clear All");
 	private JButton btnTranslate = new JButton("Translate");
 	private final JTextArea userInputTextArea = new JTextArea();
 	private JTextArea outputTextArea = new JTextArea();
-
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					PanelLayout window = new PanelLayout();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	public PanelLayout() {
 		initialize();
@@ -102,7 +89,7 @@ public class PanelLayout {
 		frame.getContentPane().add(btnTranslate);
 		frame.getContentPane().add(btnClearAll);
 		frame.getContentPane().add(btnSwap);
-		
+
 		userInputTextArea.setBounds(41, 41, 493, 114);
 		frame.getContentPane().add(userInputTextArea);
 
