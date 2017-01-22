@@ -25,7 +25,7 @@ import java.awt.TextField;
 
 public class PanelLayout {
 
-	private JFrame frame;
+	private JFrame frame; //JFrame
 	private JButton btnSwap = new JButton("Swap");
 	private JButton btnSave = new JButton("Save");
 	private JButton btnClearAll = new JButton("Clear All");
