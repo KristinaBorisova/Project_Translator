@@ -24,10 +24,19 @@ import javax.swing.event.AncestorEvent;
 public class PannelLayout2 extends TranslatorTextFilter {
 
 	private static JFrame frame;
-	private JTextField outputTextField;
-	public JButton btnClearAll = new JButton("Clear All");
 	private JTextField userInputTextField;
+	private JTextField outputTextField;
+	
+	public JButton btnClearAll = new JButton("Clear All");
 	public JButton btnEnterNewWord = new JButton("Enter word");
+	public JButton btnTranslate = new JButton("Translate");
+
+	public JMenuItem mntmCopyText = new JMenuItem("Coppy");
+	public JMenuItem mntmCut_1 = new JMenuItem("Cut");
+	public JMenuItem mntmPasteText_1 = new JMenuItem("Paste Text");
+	public JMenuItem mntmMostCommonWord_1 = new JMenuItem("Most common Word");
+	public JMenuItem mntmCountWords = new JMenuItem("Count words");
+
 
 	
 		// String iconPath = "C:\Desktop\Final Project\icon.png";
