@@ -47,7 +47,43 @@ public class PannelLayout2 extends TranslatorTextFilter {
 
 	public PannelLayout2() {
 		initialize();
+		btnsActions();
 	}
+
+
+//Buttons Actions//
+private void btnsActions() {
+		btnClearAll.addActionListener(new ActionListener() { // "Clear All" Button Action
+			public void actionPerformed(ActionEvent arg0) {
+				clearAll();
+			}
+		});
+
+		btnTranslate.addActionListener(new ActionListener() { // "Translate" Button Action
+			public void actionPerformed(ActionEvent e) {
+				translateInput();
+
+			}
+
+		});
+
+		btnEnterNewWord.addActionListener(new ActionListener() { //"Enter Word" Button Action
+			public void actionPerformed(ActionEvent e) {
+				addNewWord(); // Add code to Method
+
+			}
+		});
+
+	} // End Of method
+
+
+
+
+
+
+
+
+
 
 	private void initialize() {
 		frame = new JFrame();
