@@ -29,17 +29,7 @@ public class PannelLayout2 extends TranslatorTextFilter {
 	private JTextField userInputTextField;
 	public JButton btnEnterNewWord = new JButton("Enter word");
 
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					PannelLayout2 window = new PannelLayout2();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	
 		// String iconPath = "C:\Desktop\Final Project\icon.png";
 		// Image icon = new
 		// ImageIcon(getClass().getResource(iconPath)).getImage();
@@ -77,10 +67,10 @@ public class PannelLayout2 extends TranslatorTextFilter {
 
 		btnEnterNewWord.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// При въвеждане на дума и превода й и натискане на бутон
-				// Въведи, речникът запомня думата.
-				// Това работи само за думи. При въвеждане на повече от дума и
-				// натискане на Въведи - излиза грешка.
+				// ГЏГ°ГЁ ГўГєГўГҐГ¦Г¤Г Г­ГҐ Г­Г  Г¤ГіГ¬Г  ГЁ ГЇГ°ГҐГўГ®Г¤Г  Г© ГЁ Г­Г ГІГЁГ±ГЄГ Г­ГҐ Г­Г  ГЎГіГІГ®Г­
+				// Г‚ГєГўГҐГ¤ГЁ, Г°ГҐГ·Г­ГЁГЄГєГІ Г§Г ГЇГ®Г¬Г­Гї Г¤ГіГ¬Г ГІГ .
+				// Г’Г®ГўГ  Г°Г ГЎГ®ГІГЁ Г±Г Г¬Г® Г§Г  Г¤ГіГ¬ГЁ. ГЏГ°ГЁ ГўГєГўГҐГ¦Г¤Г Г­ГҐ Г­Г  ГЇГ®ГўГҐГ·ГҐ Г®ГІ Г¤ГіГ¬Г  ГЁ
+				// Г­Г ГІГЁГ±ГЄГ Г­ГҐ Г­Г  Г‚ГєГўГҐГ¤ГЁ - ГЁГ§Г«ГЁГ§Г  ГЈГ°ГҐГёГЄГ .
 
 			}
 		});
