@@ -77,7 +77,10 @@ private void btnsActions() {
 	} // End Of method
 
 
-
+	private void clearAll() {//function for "Clear All" button
+		userInputTextField.setText("");
+		outputTextField.setText("");
+	}
 
 
 
