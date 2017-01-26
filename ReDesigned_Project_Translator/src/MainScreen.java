@@ -1,6 +1,6 @@
 import java.awt.EventQueue;
 
-public class MainScreen extends PanelLayout {
+public class MainScreen extends PanelLayout2 {
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
