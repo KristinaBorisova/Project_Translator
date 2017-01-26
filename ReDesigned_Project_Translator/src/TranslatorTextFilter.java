@@ -18,6 +18,16 @@ public class TranslatorTextFilter  {
 	
 	public static void main(String[] args) throws FileNotFoundException {
 	
+	FileInputStream file = new FileInputStream("bulgarianWords.txt"); //referense to text files
+	Scanner fileinput = new Scanner (file);
+	int count = 0;
+	while (((Iterator<String>) file).hasNext()){
+		System.out.println(((Iterator<String>) file).next()+ "\t");
+	}
+	
+	
+	FileInputStream file2 = new FileInputStream("englishWords.txt"); //reference to text file englishWords.txt
+	
 	/*	FileInputStream file = new FileInputStream("bulgarian.txt");
 	Scanner fileinput = new Scanner (file);
 	int count = 0;
