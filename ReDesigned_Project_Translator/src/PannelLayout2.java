@@ -133,22 +133,61 @@ public class PannelLayout2 {
 		btnClearAll.setFont(new Font("Verdana", Font.PLAIN, 16));
 		btnClearAll.setForeground(new Color(139, 0, 0));
 		btnClearAll.setBackground(new Color(255, 255, 255));
-		btnClearAll.addActionListener(new ActionListener() { // "Clear All"
-																// Button Action
+		btnClearAll.addActionListener(new ActionListener() { // "Clear All" Button Action
 			public void actionPerformed(ActionEvent arg0) {
 				clearAll();
 			}
 		});
-		btnTranslate.setFont(new Font("Verdana", Font.PLAIN, 20));
-		btnTranslate.setBackground(new Color(255, 255, 255));
+		
 
 		btnTranslate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				translateInput();
+				outputTextField.setText(translatedInput(userInputTextField.getText()));
 
 			}
 
 		});
+	}
+		private void translateInput() {
+		btnTranslate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e){
+				outputTextField.setText(translatedInput(userInputTextField.getText()));
+			}
+
+			private String translatedInput(String userInput) {
+				String untranslatedText = userInput;
+				int lineOfWord = 1;
+				
+				File allBulgarianWords = new File ("C:\\Desktop\\Final Project\\Database\\bulgarianWords.txt");
+				File allEnglishWords = new File ("C:\\Desktop\\Final Project\\Database\\englishWords.txt");
+				
+				checkForLanguage(untranslatedText);
+				
+				return null;
+			}
+
+			private void checkForLanguage(String anyText) {
+				char [] anyTextToCharArray = anyText.toCharArray();
+				char[] bulgarianAlphabet = { 'а', 'б', 'в', 'г', 'д', 'е', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п',
+						'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'щ', 'ь', 'ю', 'я' };
+				for (int i = 0; i < anyText.length();) {
+					for (int k = 0; k < bulgarianAlphabet.length; k++) {
+						if (anyTextToCharArray[i] == (bulgarianAlphabet[k])) {
+						File inputWord = new File("C:\\Desktop\\Final Project\\Database\\bulgarianWords.txt");
+						File translatedWord = new File("C:\\Desktop\\Final Project\\Database\\englishWords.txt");
+						}
+					}
+
+					break;
+				}
+				
+				
+				
+			}
+
+		});
+	}
+
 		btnEnterNewWord.setFont(new Font("Verdana", Font.PLAIN, 16));
 		btnEnterNewWord.setForeground(new Color(47, 79, 79));
 		btnEnterNewWord.setBackground(new Color(255, 255, 255));
@@ -167,22 +206,7 @@ public class PannelLayout2 {
 		outputTextField.setText("");
 	}
 
-	private void translateInput() {
-		btnTranslate.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e){
-				outputTextField.setText(translatedInput(userInputTextField));
-			}
-
-			private String translatedInput(JTextField userInputTextField) {
-				String translatedInput;
-				
-				return null;
-			}
-			
-		});
-
-	}
-
+	
 	private void addNewWord() {
 		
 	
@@ -222,6 +246,9 @@ public class PannelLayout2 {
 
 		btnEnterNewWord.setBounds(350, 172, 133, 45); // Enter New Word Button
 		frame.getContentPane().add(btnEnterNewWord);
+		
+		btnTranslate.setFont(new Font("Verdana", Font.PLAIN, 20));
+		btnTranslate.setBackground(new Color(255, 255, 255));
 
 		JPanel panel = new JPanel();
 		panel.setBounds(12, 19, 505, 140);
