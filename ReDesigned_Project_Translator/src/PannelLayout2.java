@@ -154,7 +154,7 @@ public class PannelLayout2 {
 				outputTextField.setText(translatedInput(userInputTextField.getText()));
 			}
 
-			private String translatedInput(String userInput) {
+				private String translatedInput(String userInput) {
 				String untranslatedText = userInput;
 				int lineOfWord = 1;
 				
@@ -163,6 +163,28 @@ public class PannelLayout2 {
 				
 				checkForLanguage(untranslatedText);
 				
+				ArrayList<String> userInputUntranslatedText = new ArrayList<String>(Arrays.asList(untranslatedText.split(" ")));
+				
+				String myCurrentWord = null;
+				String myTranslatedWord = null;
+				
+				ArrayList<String> userInputTranslatedText = new ArrayList<String>();
+				
+				Scanner readAllbgInputWords = new Scanner("bulgarianWords.txt");
+				Scanner readenTranslatedWords = new Scanner("englishWords.txt");
+				
+		
+				
+				while (userInputUntranslatedText.equals(null)) {
+					while(readAllbgInputWords.hasNextLine()){ 
+						lineOfWord++;
+						//myCurrentWord = readAllbgInputWords.hasNextLine();
+						
+						if(userInputUntranslatedText.equals(myCurrentWord)) {
+							break;
+						}
+					}
+				}
 				return null;
 			}
 
