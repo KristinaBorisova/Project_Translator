@@ -90,6 +90,16 @@ public class TranslatorTextFilter  {
 	
 
 
+private void importToFileBulgarianWord(String inputWord) {
+
+	try (FileWriter enFile = new FileWriter("bulgarianWords.txt", true);
+			BufferedWriter bw = new BufferedWriter(enFile);
+			PrintWriter out = new PrintWriter(bw)) {
+		out.println(inputWord);
+	} catch (IOException e) {
+		System.out.println(e);
+	}
+}
 
 
 public static void importToFileEnglishWord(String inputWord) {
