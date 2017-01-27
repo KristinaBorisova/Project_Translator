@@ -35,7 +35,6 @@ public class PannelLayout2 {
 	public JMenuItem mntmCopyText = new JMenuItem("Coppy");
 	public JMenuItem mntmCut_1 = new JMenuItem("Cut");
 	public JMenuItem mntmPasteText_1 = new JMenuItem("Paste Text");
-	public JMenuItem mntmMostCommonWord_1 = new JMenuItem("Most common Word");
 	public JMenuItem mntmCountWords = new JMenuItem("Count words");
 
 	// String iconPath = "C:\Desktop\Final Project\icon.png";
@@ -86,9 +85,7 @@ public class PannelLayout2 {
 		mntmCountWords.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// Initiate Result
-				String userInput = userInputTextField + " "; // Add space after
-																// the received
-																// string
+				String userInput = userInputTextField + " "; // Add space afte the received string
 				String result = "";
 				String userTextInput = userInputTextField.getText();
 				int i = 0;
@@ -107,12 +104,12 @@ public class PannelLayout2 {
 								// get substring between " " and lenght ;
 							} else {
 								if (!userTextInput.isEmpty()) {
-									JOptionPane.showMessageDialog(null, "Empty input"); // output
+									JOptionPane.showMessageDialog(null, "Empty input"); // if input is empty
 																						// nothing
 								}
 							}
 						} else {
-							// output nothing;
+							//nothing at all
 						}
 
 					}
@@ -181,8 +178,13 @@ public class PannelLayout2 {
 		panel_1.setBounds(12, 230, 505, 139);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
+		
+		userInputTextField = new JTextField(); // user input Text Field
+		userInputTextField.setBounds(12, 13, 481, 111);
+		panel.add(userInputTextField);
+		userInputTextField.setColumns(10);
 
-		outputTextField = new JTextField();
+		outputTextField = new JTextField(); //Output Text Field
 		outputTextField.setBounds(12, 13, 481, 111);
 		panel_1.add(outputTextField);
 		outputTextField.setColumns(10);
@@ -202,10 +204,7 @@ public class PannelLayout2 {
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 
-		userInputTextField = new JTextField();
-		userInputTextField.setBounds(12, 13, 481, 111);
-		panel.add(userInputTextField);
-		userInputTextField.setColumns(10);
+	
 
 		JMenuBar menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);
@@ -217,7 +216,6 @@ public class PannelLayout2 {
 
 		mnEdit.add(mntmCut_1); // Add to menu
 		mnEdit.add(mntmPasteText_1); // Add to menu
-		mnEdit.add(mntmMostCommonWord_1); // Add to menu
 		mnEdit.add(mntmCountWords); // Add to menu
 	}
 
