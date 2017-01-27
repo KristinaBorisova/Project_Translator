@@ -20,7 +20,7 @@ import javax.swing.JTextField;
 public class AddWords extends JFrame {
 
 	private JPanel contentPane;
-    public JButton btnAddWord = new JButton("ƒÓ·‡‚Ë ƒÛÏ‡Ú‡");
+    public JButton btnAddWord = new JButton("√Ñ√Æ√°√†√¢√® √Ñ√≥√¨√†√≤√†");
     private JTextField userInputTextField;
     private JTextField userOutputTextField;
 	/**
@@ -56,7 +56,7 @@ public class AddWords extends JFrame {
 	
 	}
 	private void addWordsToEnglishTextFile(String userOutputWord) {
-		try (FileWriter fw = new FileWriter("C:\\Desktop\\Final Project\\Database\\why.txt", true);
+		try (FileWriter fw = new FileWriter("C:\\Desktop\\Final Project\\Database\\why.txt", true); // reference to empty .txt file to check if it works
 				BufferedWriter bw = new BufferedWriter(fw);
 				PrintWriter out = new PrintWriter(bw)) {
 			out.println(userOutputWord);
@@ -67,7 +67,7 @@ public class AddWords extends JFrame {
 	
 	
 	private void addWordsToBulgarianTextFile(String userInputWord) { 
-		try (FileWriter fw = new FileWriter("C:\\Desktop\\Final Project\\Database\\bulgarianEmpty.txt", true);
+		try (FileWriter fw = new FileWriter("C:\\Desktop\\Final Project\\Database\\bulgarianEmpty.txt", true); // reference to empty .txt file to check if it works
 				BufferedWriter bw = new BufferedWriter(fw);
 				PrintWriter out = new PrintWriter(bw)) {
 			out.println(userInputWord);
