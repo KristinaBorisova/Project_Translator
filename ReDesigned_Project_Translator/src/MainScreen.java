@@ -7,7 +7,7 @@ public static void main(String[] args) {
 			public void run() {
 				try {
 					PannelLayout2 window = new PannelLayout2();
-					window.frame.setVisible(true);
+					window.frmTranslator.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
