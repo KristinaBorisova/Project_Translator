@@ -1,4 +1,4 @@
-# Project_Translator
+# Project Translator
    The project contains of a simple Java app Translator that has a few functions.The task of the app is to translate successfully 
 Input data from Bulgarian to English or vice versa.The main function includes translating entered input from the user, finding out
 the language in which the input is written (e.g.if the entered input is a bulgarian or english word) and returning the translation  
