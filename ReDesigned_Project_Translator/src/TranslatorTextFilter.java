@@ -67,5 +67,48 @@ public class TranslatorTextFilter  {
 	}
 	*/
 	
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.util.*; //quick way to import ArrayLists and Scanner
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.io.FileInputStream;
+
+
+
+public static void importToFileEnglishWord(String inputWord) {
+		try {
+			FileWriter bgFile = new FileWriter("bulgarianWords.txt");
+			FileWriter enFile = new FileWriter("englishWords.txt");
+			BufferedWriter bw = new BufferedWriter(bgFile);
+			PrintWriter out = new PrintWriter(bw);
+			{
+				out.println(inputWord);
+			}
+		}
+
+		catch (FileNotFoundException e) {
+
+			e.printStackTrace();
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
+
 }
