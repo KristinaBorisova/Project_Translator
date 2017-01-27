@@ -184,18 +184,8 @@ public class PannelLayout2 {
 	}
 
 	private void addNewWord() {
-		//addBulgarianWord(String anyText);
-
-		// public void actionPerformed(ActionEvent e) {
-		// if( outputTextField.getText().split(" ").length == 1 ||
-		// userInputTextField.getText().split(" ").length == 1 ) {
-		// importEnglishText(userInputTextField.getText());
-		// importBulgarianText(outputTextField.getText());
-
-		// } else {
-		// sysout
-		// }
-		// }
+		
+	
 
 		// });
 
