@@ -4,6 +4,8 @@ import java.awt.Image;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.AbstractButton;
+import javax.swing.Action;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -21,13 +23,12 @@ import javax.swing.JMenu;
 import javax.swing.event.AncestorListener;
 import javax.swing.event.AncestorEvent;
 
-public class PannelLayout2 extends TranslatorTextFilter {
+public class PannelLayout2 {
 
-	private static JFrame frame;
-	private JTextField userInputTextField;
+	static JFrame frame;
 	private JTextField outputTextField;
-	
 	public JButton btnClearAll = new JButton("Clear All");
+	protected static JTextField userInputTextField;
 	public JButton btnEnterNewWord = new JButton("Enter word");
 	public JButton btnTranslate = new JButton("Translate");
 
@@ -37,29 +38,106 @@ public class PannelLayout2 extends TranslatorTextFilter {
 	public JMenuItem mntmMostCommonWord_1 = new JMenuItem("Most common Word");
 	public JMenuItem mntmCountWords = new JMenuItem("Count words");
 
-
-	
-		// String iconPath = "C:\Desktop\Final Project\icon.png";
-		// Image icon = new
-		// ImageIcon(getClass().getResource(iconPath)).getImage();
-		// frame.setIconImage(icon);
-	}
+	// String iconPath = "C:\Desktop\Final Project\icon.png";
+	// Image icon = new
+	// ImageIcon(getClass().getResource(iconPath)).getImage();
+	// frame.setIconImage(icon);
 
 	public PannelLayout2() {
-		initialize();
+		initializeElements();
 		btnsActions();
+		menuItemsActions();
 	}
 
+	private void menuItemsActions() {
+		// Add Methods
+		// mnEdit.addActionListener(new ActionListener() { //Menu Bar
+		// public void actionPerformed(ActionEvent arg0) {
+		// mnEdit.show();
+		// }
+		// });
+		mntmCopyText.addActionListener(new ActionListener() { // Button Copy
+			public void actionPerformed(ActionEvent e) {
+				userInputTextField.copy();
+				outputTextField.copy();
+			}
+		});
 
-//Buttons Actions//
-private void btnsActions() {
-		btnClearAll.addActionListener(new ActionListener() { // "Clear All" Button Action
+		mntmCut_1.addActionListener(new ActionListener() { // Button Cut
+			public void actionPerformed(Action e) {
+				// userInputTextField.cut();
+			}
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				userInputTextField.cut();
+
+			}
+		});
+
+		mntmPasteText_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				String userInput = userInputTextField.getText();
+				outputTextField.paste();
+			}
+		});
+
+		mntmCountWords.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// Initiate Result
+				String userInput = userInputTextField + " "; // Add space after
+																// the received
+																// string
+				String result = "";
+				String userTextInput = userInputTextField.getText();
+				int i = 0;
+				int count = userTextInput.length();
+
+				try {
+
+					for ( i = 0; i <= count - i; i++) {
+						if (count >= 1) {
+
+							String tempString = userTextInput.substring(0, userTextInput.indexOf(" "));
+
+							if (userTextInput.contains(" ") && (!userTextInput.isEmpty())) {
+								userTextInput = userTextInput.substring(userTextInput.indexOf(" ") + 1,
+										userTextInput.length());
+								// get substring between " " and lenght ;
+							} else {
+								if (!userTextInput.isEmpty()) {
+									JOptionPane.showMessageDialog(null, "Empty input"); // output
+																						// nothing
+								}
+							}
+						} else {
+							// output nothing;
+						}
+
+					}
+
+				} catch (Exception ex) {
+					System.out.println(ex.getMessage());
+				}
+
+				JOptionPane.showMessageDialog(mntmCountWords, i);
+
+			}
+		});
+	}
+
+	// End of menuItemsActions();
+
+	private void btnsActions() {
+		btnClearAll.addActionListener(new ActionListener() { // "Clear All"
+																// Button Action
 			public void actionPerformed(ActionEvent arg0) {
 				clearAll();
 			}
 		});
 
-		btnTranslate.addActionListener(new ActionListener() { // "Translate" Button Action
+		btnTranslate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				translateInput();
 
@@ -67,7 +145,7 @@ private void btnsActions() {
 
 		});
 
-		btnEnterNewWord.addActionListener(new ActionListener() { //"Enter Word" Button Action
+		btnEnterNewWord.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				addNewWord(); // Add code to Method
 
@@ -76,19 +154,22 @@ private void btnsActions() {
 
 	} // End Of method
 
-
-	private void clearAll() {//function for "Clear All" button
+	private void clearAll() {
 		userInputTextField.setText("");
 		outputTextField.setText("");
 	}
 
+	private void translateInput() {
+		// ADDDDDDDDDDD!!!!!!!!!!!!!!!!!!!!
 
+	}
 
+	private void addNewWord() {
+		// ADDDDDDDDDDDD!!!!!!!!!!!!!!!
 
+	}
 
-
-
-	private void initialize() {
+	private void initializeElements() {
 		frame = new JFrame();
 		frame.getContentPane().setForeground(SystemColor.activeCaption);
 		frame.setBounds(400, 400, 555, 470);
@@ -101,28 +182,19 @@ private void btnsActions() {
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 
-		userInputTextField = new JTextField();
-		userInputTextField.setBounds(12, 13, 481, 111);
-		panel_1.add(userInputTextField);
-		userInputTextField.setColumns(10);
+		outputTextField = new JTextField();
+		outputTextField.setBounds(12, 13, 481, 111);
+		panel_1.add(outputTextField);
+		outputTextField.setColumns(10);
 
-		JButton btnTranslate = new JButton("\u0422ranslate");
-		btnTranslate.setBounds(195, 162, 143, 55);
+		btnTranslate.setBounds(195, 162, 143, 55); // Translate Button
 		frame.getContentPane().add(btnTranslate);
 		btnTranslate.setForeground(new Color(100, 149, 237));
 		btnClearAll.setBounds(50, 172, 133, 45);
+
 		frame.getContentPane().add(btnClearAll);
 
-		btnEnterNewWord.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				// Ïðè âúâåæäàíå íà äóìà è ïðåâîäà é è íàòèñêàíå íà áóòîí
-				// Âúâåäè, ðå÷íèêúò çàïîìíÿ äóìàòà.
-				// Òîâà ðàáîòè ñàìî çà äóìè. Ïðè âúâåæäàíå íà ïîâå÷å îò äóìà è
-				// íàòèñêàíå íà Âúâåäè - èçëèçà ãðåøêà.
-
-			}
-		});
-		btnEnterNewWord.setBounds(350, 172, 133, 45);
+		btnEnterNewWord.setBounds(350, 172, 133, 45); // Enter New Word Button
 		frame.getContentPane().add(btnEnterNewWord);
 
 		JPanel panel = new JPanel();
@@ -130,77 +202,23 @@ private void btnsActions() {
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 
-		outputTextField = new JTextField();
-		outputTextField.setBounds(12, 13, 481, 111);
-		panel.add(outputTextField);
-		outputTextField.setColumns(10);
-		btnClearAll.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				try {
-					userInputTextField.setText("");
-					outputTextField.setText("");
-				} catch (Exception e2) {
-					JOptionPane.showMessageDialog(null, "No text to clear");
-				}
-			}
-		});
-		btnTranslate.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-			}
-		});
+		userInputTextField = new JTextField();
+		userInputTextField.setBounds(12, 13, 481, 111);
+		panel.add(userInputTextField);
+		userInputTextField.setColumns(10);
 
 		JMenuBar menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);
 
-		JMenu mnEdit = new JMenu("Edit");
+		JMenu mnEdit = new JMenu("Edit");// Create Menu
 		menuBar.add(mnEdit);
-		mnEdit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				mnEdit.show();
-			}
-		});
 
-		JMenuItem mntmCopyText = new JMenuItem("Coppy");
-		mntmCopyText.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				try {
-					userInputTextField.copy();
-				} catch (Exception e2) {
-					JOptionPane.showMessageDialog(null, "No text.Try Again!");
-				}
-
-			}
-		});
-		mntmCopyText.addAncestorListener(new AncestorListener() {
-			public void ancestorAdded(AncestorEvent arg0) {
-			}
-
-			public void ancestorMoved(AncestorEvent arg0) {
-			}
-
-			public void ancestorRemoved(AncestorEvent arg0) {
-			}
-		});
 		mnEdit.add(mntmCopyText);
 
-		JMenuItem mntmPasteText_1 = new JMenuItem("Paste Text");
-		mntmPasteText_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				outputTextField.paste();
-			}
-		});
-		mnEdit.add(mntmPasteText_1);
-
-		JMenuItem mntmCut = new JMenuItem("Cut");
-
-		JMenuItem mntmMostCommonWord_1 = new JMenuItem("Most common Word");
-		mnEdit.add(mntmMostCommonWord_1);
-
-		JMenuItem mntmCountWords = new JMenuItem("Count words");
-		mnEdit.add(mntmCountWords);
+		mnEdit.add(mntmCut_1); // Add to menu
+		mnEdit.add(mntmPasteText_1); // Add to menu
+		mnEdit.add(mntmMostCommonWord_1); // Add to menu
+		mnEdit.add(mntmCountWords); // Add to menu
 	}
 
-	private static void addPopup(Component component, final JPopupMenu popup) {
-	}
 }
