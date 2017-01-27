@@ -22,6 +22,8 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.event.AncestorListener;
 import javax.swing.event.AncestorEvent;
+import java.awt.Font;
+import java.awt.Window.Type;
 
 public class PannelLayout2 {
 
@@ -32,7 +34,7 @@ public class PannelLayout2 {
 	public JButton btnEnterNewWord = new JButton("Enter word");
 	public JButton btnTranslate = new JButton("Translate");
 
-	public JMenuItem mntmCopyText = new JMenuItem("Coppy");
+	public JMenuItem mntmCopyText = new JMenuItem("Copy");
 	public JMenuItem mntmCut_1 = new JMenuItem("Cut");
 	public JMenuItem mntmPasteText_1 = new JMenuItem("Paste Text");
 	public JMenuItem mntmCountWords = new JMenuItem("Count words");
@@ -85,7 +87,9 @@ public class PannelLayout2 {
 		mntmCountWords.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// Initiate Result
-				String userInput = userInputTextField + " "; // Add space afte the received string
+				String userInput = userInputTextField + " "; // Add space after
+																// the received
+																// string
 				String result = "";
 				String userTextInput = userInputTextField.getText();
 				int i = 0;
@@ -100,16 +104,15 @@ public class PannelLayout2 {
 
 							if (userTextInput.contains(" ") && (!userTextInput.isEmpty())) {
 								userTextInput = userTextInput.substring(userTextInput.indexOf(" ") + 1,
-										userTextInput.length());
-								// get substring between " " and lenght ;
+										userTextInput.length()); // get substring between " " and lenght ;
 							} else {
 								if (!userTextInput.isEmpty()) {
-									JOptionPane.showMessageDialog(null, "Empty input"); // if input is empty
+									JOptionPane.showMessageDialog(null, "Empty input"); // output
 																						// nothing
 								}
 							}
 						} else {
-							//nothing at all
+							// output nothing;
 						}
 
 					}
@@ -127,12 +130,17 @@ public class PannelLayout2 {
 	// End of menuItemsActions();
 
 	private void btnsActions() {
+		btnClearAll.setFont(new Font("Verdana", Font.PLAIN, 16));
+		btnClearAll.setForeground(new Color(139, 0, 0));
+		btnClearAll.setBackground(new Color(255, 255, 255));
 		btnClearAll.addActionListener(new ActionListener() { // "Clear All"
 																// Button Action
 			public void actionPerformed(ActionEvent arg0) {
 				clearAll();
 			}
 		});
+		btnTranslate.setFont(new Font("Verdana", Font.PLAIN, 20));
+		btnTranslate.setBackground(new Color(255, 255, 255));
 
 		btnTranslate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -141,6 +149,9 @@ public class PannelLayout2 {
 			}
 
 		});
+		btnEnterNewWord.setFont(new Font("Verdana", Font.PLAIN, 16));
+		btnEnterNewWord.setForeground(new Color(47, 79, 79));
+		btnEnterNewWord.setBackground(new Color(255, 255, 255));
 
 		btnEnterNewWord.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -157,17 +168,43 @@ public class PannelLayout2 {
 	}
 
 	private void translateInput() {
-		// ADDDDDDDDDDD!!!!!!!!!!!!!!!!!!!!
+		btnTranslate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e){
+				outputTextField.setText(translatedInput(userInputTextField));
+			}
+
+			private String translatedInput(JTextField userInputTextField) {
+				String translatedInput;
+				
+				return null;
+			}
+			
+		});
 
 	}
 
 	private void addNewWord() {
-		// ADDDDDDDDDDDD!!!!!!!!!!!!!!!
+		//addBulgarianWord(String anyText);
+
+		// public void actionPerformed(ActionEvent e) {
+		// if( outputTextField.getText().split(" ").length == 1 ||
+		// userInputTextField.getText().split(" ").length == 1 ) {
+		// importEnglishText(userInputTextField.getText());
+		// importBulgarianText(outputTextField.getText());
+
+		// } else {
+		// sysout
+		// }
+		// }
+
+		// });
 
 	}
 
 	private void initializeElements() {
-	frame = new JFrame("Translator");
+		frame = new JFrame("Translator");
+		frame.setType(Type.UTILITY);
+		frame.setFont(new Font("Verdana", Font.BOLD, 19));
 		frame.setBackground(new Color(240, 248, 255));
 		frame.getContentPane().setForeground(SystemColor.activeCaption);
 		frame.setBounds(400, 400, 555, 470);
@@ -181,6 +218,7 @@ public class PannelLayout2 {
 		panel_1.setLayout(null);
 
 		outputTextField = new JTextField();
+		outputTextField.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		outputTextField.setBounds(12, 13, 481, 111);
 		panel_1.add(outputTextField);
 		outputTextField.setColumns(10);
@@ -201,7 +239,8 @@ public class PannelLayout2 {
 		panel.setLayout(null);
 
 		userInputTextField = new JTextField();
-		userInputTextField.setBounds(12, 13, 481, 111);
+		userInputTextField.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		userInputTextField.setBounds(12, 16, 481, 111);
 		panel.add(userInputTextField);
 		userInputTextField.setColumns(10);
 
@@ -215,7 +254,7 @@ public class PannelLayout2 {
 		mnEdit.add(mntmCopyText);
 
 		mnEdit.add(mntmCut_1); // Add to menu
-		mnEdit.add(mntmPasteText_1); // Add to menu
+		mnEdit.add(mntmPasteText_1);
 		mnEdit.add(mntmCountWords); // Add to menu
 	}
 
