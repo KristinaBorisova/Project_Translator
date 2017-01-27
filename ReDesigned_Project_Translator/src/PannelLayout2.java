@@ -167,31 +167,27 @@ public class PannelLayout2 {
 	}
 
 	private void initializeElements() {
-		frame = new JFrame();
+	frame = new JFrame("Translator");
+		frame.setBackground(new Color(240, 248, 255));
 		frame.getContentPane().setForeground(SystemColor.activeCaption);
 		frame.setBounds(400, 400, 555, 470);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		frame.getContentPane().setBackground(Color.GREEN);
+		frame.getContentPane().setBackground(new Color(230, 230, 250));
 
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(12, 230, 505, 139);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
-		
-		userInputTextField = new JTextField(); // user input Text Field
-		userInputTextField.setBounds(12, 13, 481, 111);
-		panel.add(userInputTextField);
-		userInputTextField.setColumns(10);
 
-		outputTextField = new JTextField(); //Output Text Field
+		outputTextField = new JTextField();
 		outputTextField.setBounds(12, 13, 481, 111);
 		panel_1.add(outputTextField);
 		outputTextField.setColumns(10);
 
-		btnTranslate.setBounds(195, 162, 143, 55); // Translate Button
+		btnTranslate.setBounds(195, 167, 143, 55); // Translate Button
 		frame.getContentPane().add(btnTranslate);
-		btnTranslate.setForeground(new Color(100, 149, 237));
+		btnTranslate.setForeground(new Color(0, 0, 139));
 		btnClearAll.setBounds(50, 172, 133, 45);
 
 		frame.getContentPane().add(btnClearAll);
@@ -204,9 +200,13 @@ public class PannelLayout2 {
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 
-	
+		userInputTextField = new JTextField();
+		userInputTextField.setBounds(12, 13, 481, 111);
+		panel.add(userInputTextField);
+		userInputTextField.setColumns(10);
 
 		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBackground(new Color(255, 255, 255));
 		frame.setJMenuBar(menuBar);
 
 		JMenu mnEdit = new JMenu("Edit");// Create Menu
