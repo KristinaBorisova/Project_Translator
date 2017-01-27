@@ -176,13 +176,20 @@ public class PannelLayout2 {
 		
 				
 				while (userInputUntranslatedText.equals(null)) {
+								while (userInputUntranslatedText.equals(null)) {
 					while(readAllbgInputWords.hasNextLine()){ 
 						lineOfWord++;
 						//myCurrentWord = readAllbgInputWords.hasNextLine();
 						
 						if(userInputUntranslatedText.equals(myCurrentWord)) {
+							outputTextField.setText(myCurrentWord);
 							break;
 						}
+					}
+				}
+				return myCurrentWord ;
+				
+			}
 					}
 				}
 				return null;
