@@ -25,7 +25,7 @@ import javax.swing.event.AncestorEvent;
 import java.awt.Font;
 import java.awt.Window.Type;
 
-public class PannelLayout2 {
+public class PannelLayout2 extends TranslatorTextFilter {
 
 	static JFrame frame;
 	private JTextField outputTextField;
@@ -225,6 +225,7 @@ public class PannelLayout2 {
 			public void actionPerformed(ActionEvent e) {
 				addNewWord(); // Add code to Method
 
+				
 			}
 		});
 
@@ -238,10 +239,14 @@ public class PannelLayout2 {
 	
 	private void addNewWord() {
 		
+		 if( userInputTextField.getText().split(" ").length == 1 || outputTextField.getText().split(" ").length == 1 ) {
+		 importToFileEnglishWord(userInputTextField.getText());
+		 importToFileBulgarianWord(outputTextField.getText());
+		 }
+		  else {
+		 JOptionPane.showMessageDialog(null, "Error,try again");
+		 }
 	
-
-		// });
-
 	}
 
 	private void initializeElements() {
