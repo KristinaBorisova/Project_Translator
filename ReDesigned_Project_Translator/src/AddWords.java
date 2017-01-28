@@ -17,14 +17,15 @@ import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class AddWords extends JFrame {
+public class AddWordsScreen extends JFrame {
 
 	private JPanel contentPane;
-    public JButton btnAddWord = new JButton("Äîáàâè Äóìàòà");
+    public JButton btnAddWord = new JButton("Добави Думата");
     private JTextField userInputTextField;
     private JTextField userOutputTextField;
 	/**
 	 * Launch the application.
+	 * @return 
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -56,7 +57,7 @@ public class AddWords extends JFrame {
 	
 	}
 	private void addWordsToEnglishTextFile(String userOutputWord) {
-		try (FileWriter fw = new FileWriter("C:\\Desktop\\Final Project\\Database\\why.txt", true); // reference to empty .txt file to check if it works
+		try (FileWriter fw = new FileWriter("C:\\Desktop\\Final Project\\Database\\englishEmpty.txt", true);
 				BufferedWriter bw = new BufferedWriter(fw);
 				PrintWriter out = new PrintWriter(bw)) {
 			out.println(userOutputWord);
@@ -67,7 +68,7 @@ public class AddWords extends JFrame {
 	
 	
 	private void addWordsToBulgarianTextFile(String userInputWord) { 
-		try (FileWriter fw = new FileWriter("C:\\Desktop\\Final Project\\Database\\bulgarianEmpty.txt", true); // reference to empty .txt file to check if it works
+		try (FileWriter fw = new FileWriter("C:\\Desktop\\Final Project\\Database\\bulgarianEmpty.txt", true);
 				BufferedWriter bw = new BufferedWriter(fw);
 				PrintWriter out = new PrintWriter(bw)) {
 			out.println(userInputWord);
@@ -82,7 +83,7 @@ public class AddWords extends JFrame {
 		
 	
 
-	public AddWords() {
+	public AddWordsScreen() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -101,7 +102,7 @@ public class AddWords extends JFrame {
 		contentPane.add(btnAddWord);
 		
 		JLabel label = new JLabel("\u0412\u044A\u0432\u0435\u0434\u0435\u0442\u0435 \u0434\u0443\u043C\u0430 \u043D\u0430 \u0431\u044A\u043B\u0433\u0430\u0440\u0441\u043A\u0438 \u0435\u0437\u0438\u043A:");
-		label.setBounds(12, 9, 203, 25);
+		label.setBounds(12, 9, 359, 25);
 		contentPane.add(label);
 		
 		JLabel label_1 = new JLabel("\u0412\u044A\u0432\u0435\u0434\u0435\u0442\u0435 \u043F\u0440\u0435\u0432\u043E\u0434\u0430 \u043D\u0430 \u0434\u0443\u043C\u0430\u0442\u0430 :");
@@ -119,4 +120,6 @@ public class AddWords extends JFrame {
 		contentPane.add(userOutputTextField);
 		userOutputTextField.setColumns(10);
 	}
+
+
 }
