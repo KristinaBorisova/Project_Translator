@@ -245,22 +245,6 @@ public class PannelLayout2 extends AddWords {
 						break;
 					}
 				}
-		
-	// private void addNewWord() {
-	// addBulgarianWord(String anyText);
-	// String gosho = "cat";
-	// TranslatorTextFilter textFilter = new TranslatorTextFilter();
-	// textFilter.importToFileEnglishWord(gosho);
-	// public void actionPerformed(ActionEvent e) {
-	// if (userInputTextField.getText().split(" ").length == 1 ||
-	// outputTextField.getText().split(" ").length == 1) {
-	// importToFileEnglishWord(userInputTextField.getText());
-	// importToFileBulgarianWord(outputTextField.getText());
-	// } else {
-	// JOptionPane.showMessageDialog(null, "Error,try again");
-	// }
-	//
-	// }
 
 	private void initializeElements() {
 
